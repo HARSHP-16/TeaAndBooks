@@ -1,0 +1,499 @@
+/* =========================
+GLOBAL
+========================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.goals-container {
+  width: 100%;
+
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding:
+    8px 14px
+    120px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+
+/* =========================
+TITLE
+========================= */
+
+.goals-container h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+
+  color: #0f172a;
+}
+
+.goals-container h3::after {
+  content: "";
+
+  display: block;
+
+  width: 62px;
+  height: 4px;
+
+  margin: 10px auto 0;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c6cf2,
+      #a78bfa
+    );
+}
+
+/* =========================
+FORM
+========================= */
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 18px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(248,250,252,0.98)
+    );
+
+  border:
+    1px solid rgba(226,232,240,0.7);
+
+  box-shadow:
+    0 4px 14px rgba(15,23,42,0.04);
+}
+
+/* =========================
+INPUTS
+========================= */
+
+.goal-form input,
+.goal-form textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid #dbe4ee;
+
+  background:
+    rgba(248,250,252,0.92);
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    all 0.22s ease;
+}
+
+.goal-form textarea {
+  min-height: 90px;
+
+  resize: none;
+
+  line-height: 1.6;
+}
+
+.goal-form input::placeholder,
+.goal-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.goal-form input:focus,
+.goal-form textarea:focus {
+  border-color: #a78bfa;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 5px rgba(167,139,250,0.12);
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.goal-form button {
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c6cf2,
+      #a78bfa
+    );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.goal-form button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 24px rgba(124,108,242,0.16);
+}
+
+/* =========================
+GOALS LIST
+========================= */
+
+.goals-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+/* =========================
+GOAL CARD
+========================= */
+
+.goal-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(248,250,252,0.98)
+    );
+
+  border:
+    1px solid rgba(226,232,240,0.7);
+
+  box-shadow:
+    0 4px 14px rgba(15,23,42,0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(167,139,250,0.18);
+
+  box-shadow:
+    0 10px 24px rgba(167,139,250,0.08);
+}
+
+/* =========================
+ACTIVE CARD
+========================= */
+
+.goal-card.active {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(245,243,255,0.96),
+      rgba(250,245,255,0.98)
+    );
+
+  border-color:
+    rgba(167,139,250,0.26);
+}
+
+/* =========================
+HEADER ROW
+========================= */
+
+.goal-card h4 {
+  margin: 0;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  color: #0f172a;
+}
+
+/* =========================
+ACTIVE BADGE
+========================= */
+
+.active-badge {
+  align-self: flex-start;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(167,139,250,0.14);
+
+  color: #6d5bd0;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================
+CONTENT
+========================= */
+
+.goal-main-text {
+  margin: 0;
+
+  font-size: 15px;
+
+  color: #334155;
+
+  line-height: 1.6;
+}
+
+.goal-date {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #94a3b8;
+}
+
+.goal-notes {
+  margin: 2px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #64748b;
+}
+
+/* =========================
+ACTIONS
+========================= */
+
+.goal-actions {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.goal-actions button {
+  flex: 1;
+
+  height: 42px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    all 0.22s ease;
+}
+
+/* edit */
+
+.goal-actions button:first-child {
+  background:
+    rgba(248,250,252,0.96);
+
+  color: #334155;
+
+  border:
+    1px solid rgba(203,213,225,0.8);
+}
+
+.goal-actions button:first-child:hover {
+  background: #f1f5f9;
+}
+
+/* active */
+
+.goal-actions button:last-child {
+  background:
+    rgba(167,139,250,0.10);
+
+  color: #6d5bd0;
+
+  border:
+    1px solid rgba(167,139,250,0.22);
+}
+
+.goal-actions button:last-child:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #7c6cf2,
+      #a78bfa
+    );
+
+  color: white;
+
+  border-color: transparent;
+}
+
+/* =========================
+EMPTY STATE
+========================= */
+
+.goals-empty {
+  padding: 22px 18px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(248,250,252,0.98)
+    );
+
+  border:
+    1px solid rgba(226,232,240,0.7);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .goals-container {
+    gap: 10px;
+  }
+
+  .goals-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .goal-form,
+  .goal-card {
+    padding: 16px;
+
+    border-radius: 20px;
+  }
+  .goal-card {
+    gap: 8px;
+  }
+  .goal-form input,
+  .goal-form textarea {
+    padding: 12px 14px;
+
+    font-size: 14px;
+  }
+
+  .goal-form textarea {
+    min-height: 80px;
+  }
+
+  .goal-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .goal-main-text {
+    font-size: 14px;
+  }
+
+  .goal-notes {
+    font-size: 12px;
+  }
+
+  .goal-actions {
+    flex-direction: column;
+  }
+
+  .goal-actions button {
+    width: 100%;
+  }
+}
+.goal-form,
+.goal-card {
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.97),
+      rgba(248,250,252,0.98)
+    );
+
+  border:
+    1px solid rgba(226,232,240,0.7);
+
+  box-shadow:
+    0 4px 12px rgba(15,23,42,0.04);
+}
